@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/img/logoN.png" alt="logo">
+        <nav>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <ul id="navList">
+                <li><a href="#seccion1">Inicio</a></li>
+                <li><a href="#seccion2">Terminales</a></li>
+                <li><a href="/sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-content">
+                <div class="card terminal-card" data-terminal="petroleo">
+                    <img src="/img/imgcombustible.png" alt="Combustible">
+                </div>
+
+                <div class="card terminal-card" data-terminal="el-roble">
+                    <img src="/img/imgelroble.png" alt="Terminal El Roble">
+                </div>
+                <div class="card terminal-card" data-terminal="la-reina">
+                    <img src="/img/imglareina.png" alt="Terminal La Reina">
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <article>
+                <div class="Levantamientos">
+                    <h2>Resumen de turno Combustible ER - LR</h2>
+                    <p>Acá encontraras los Buses pendientes por carga de Petroleo</p>
+                    <table id="levantamientos-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all"></th>
+                                <th>Número Interno</th>
+                                <th>PPU</th>
+                                <th>Estado</th>
+                                <th>Litros</th>
+                                <th>Ubicación</th>
+                                <th>Comentario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas de datos se insertarán aquí -->
+                        </tbody>
+                    </table>
+                    <button id="select-all-btn" class="styled-button">Seleccionar Todos</button>
+                    <button id="informar-cargados-btn" class="styled-button">Informar como Cargados</button>
+                </div>
+            </article>
+
+            <article>
+                <div class="Levantamientos">
+                    <h2>Aseo de Buses y Dependencias</h2>
+                    <p>Acá encontraras</p>
+                    <table id="levantamientos-table-aseo">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all-aseo"></th>
+                                <th>Número Interno</th>
+                                <th>PPU</th>
+                                <th>Estado</th>
+                                <th>Litros</th>
+                                <th>Ubicación</th>
+                                <th>Comentario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas de datos se insertarán aquí -->
+                        </tbody>
+                    </table>
+                    <button id="select-all-btn-aseo" class="styled-button">Seleccionar Todos</button>
+                    <button id="informar-cargados-btn-aseo" class="styled-button">Informar como Cargados</button>
+                </div>
+            </article>
+
+            <article>
+                <div class="">
+                    <h2>Informes</h2>
+                    <p>Acá podras revisar un resumen de todo nuestro trabajo</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="reporteriachecklist">
+                    <h2>Reporteria Checklist</h2>
+                    <p>Acá encontrarás información sobre la reporteria de los Check-List revisados en los terminales CLM</p>
+                    <br>
+                    <div class="report-container">
+                        <iframe src="https://docs.google.com/spreadsheets/u/0/d/e/2CAIWO3emaoxKiNHOY76UKvwSeqLNcJ07cZwEM9VR5sUCUgP3qhooIAbMSxjpgbgl4-p8m-RZw-N1hqXnDjg/gviz/chartiframe?oid=1963959796&resourcekey"></iframe>
+                    </div>
+                    <div class="report-container">
+                        <button id="reporteriamantencion" class="styled-button">Reporteria Mantencion</button>
+                        <button id="reporterialogistica" class="styled-button">Reporteria Logistica</button>
+                    </div>
+                    <button id="botonchecklist" class="styled-button">Faltan por Checklist</button>
+                </div>
+            </article>
+            <article>
+                <section class="grid_container">
+                    
+                    <div id="terminalelroble" class="terminales">
+                        <img src="/img/nueva-flota.jpg" alt="img"><br>
+                        <h3>Terminal El Roble</h3><br>
+                        <button id="reviewButton" class="styled-button">Revisa aquí</button>
+                    </div>
+
+                    <div id="terminalelroble" class="terminales">
+                        <img src="/img/head-recorridos-RBU-1024x683.jpg" alt="img"><br>
+                        <h3>Terminal La Reina</h3><br>
+                        <button id="reviewButton1" class="styled-button">Revisa aquí</button>
+                    </div>
+
+                    <div id="terminalelroble" class="terminales">
+                        <img src="/img/head-recorridos-RBU-1024x683.jpg" alt="img"><br>
+                        <h3>Terminal La Reina</h3><br>
+                        <button id="reviewButton2" class="styled-button">Revisa aquí</button>
+                    </div>
+
+                    <div id="terminalelroble" class="terminales">
+                        <img src="/img/head-recorridos-RBU-1024x683.jpg" alt="img"><br>
+                        <h3>Terminal La Reina</h3><br>
+                        <button id="reviewButton3" class="styled-button">Revisa aquí</button>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <aside class="sidebar right-sidebar">
+            <div class="sidebar-content">
+                <div class="card">
+                    <img src="/img/perfil-hombre-dibujos-animados_18591-58482.avif" alt="Jefe">
+                    <h3 class="nombrejefe">Cristian Luraschi</h3>
+                    <h4 class="cargo-jefe">Jefe de Terminal</h4>
+                    <p class="comentario-jefe">Comentario: Mantengan el buen trabajo!</p>
+                    <p class="correo-jefe">Correo: clm@rbu.cl</p>
+                </div>
+                <div class="supervisores">
+                    <div class="supervisor">
+                        <img src="/img/Logo agencia de viajes moderno degradado azul cielo.png" alt="Supervisor 1">
+                        <h3 class="nombre-admin">Victor Riquelme</h3>
+                        <h5 class="cargoadmin">Supervisor Administrativo</h5>
+                        <p class="correoadmin">Correo: vrv@rbu.cl</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Derechos reservados © iag@rbu.cl</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-terminal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var navList = document.getElementById('navList');
+            if (navList.style.display === 'block') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'block';
+            }
+        });
+
+        const terminalCards = document.querySelectorAll('.terminal-card');
+        terminalCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const terminal = this.dataset.terminal;
+                if (terminal === 'petroleo') {
+                    sessionStorage.setItem('sessionName', 'petroleo');
+                    window.location.href = 'petroleo.html';
+                } else if (terminal === 'el-roble') {
+                    sessionStorage.setItem('sessionName', 'elRoble');
+                    window.location.href = 'elroble.html';
+                } else if (terminal === 'la-reina') {
+                    sessionStorage.setItem('sessionName', 'laReina');
+                    window.location.href = 'lareina.html';
+                }
+            });
+        });
+
+        document.getElementById('reviewButton').addEventListener('click', function () {
+            window.location.href = 'terminales/elroble.html';
+        });
+        document.getElementById('reviewButton1').addEventListener('click', function () {
+            window.location.href = 'terminales/lareina.html';
+        });
+        document.getElementById('reviewButton2').addEventListener('click', function () {
+            window.location.href = 'terminales/mariaangelica.html';
+        });
+        document.getElementById('reviewButton3').addEventListener('click', function () {
+            window.location.href = 'terminales/elroble.html';
+        });
+        document.getElementById('botonchecklist').addEventListener('click', function () {
+            window.open('https://docs.google.com/spreadsheets/d/1e-eNJGfx_XJDkjyrIJaNYxzJOTfHitG7rXcy4nqYzgU/edit#gid=1385989224', '_blank');
+        });
+        document.getElementById('reporteriamantencion').addEventListener('click', function () {
+            window.open('https://docs.google.com/spreadsheets/d/1e-eNJGfx_XJDkjyrIJaNYxzJOTfHitG7rXcy4nqYzgU/edit#gid=21521201', '_blank');
+        });
+        document.getElementById('reporterialogistica').addEventListener('click', function () {
+            window.open('https://docs.google.com/spreadsheets/d/1e-eNJGfx_XJDkjyrIJaNYxzJOTfHitG7rXcy4nqYzgU/edit#gid=374646577', '_blank');
+        });
+
+        // Modal functionality
+        const modal = document.getElementById("modal");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function showNotification(message, color = '#28a745') {
+            const notification = document.getElementById('notification');
+            notification.innerText = message;
+            notification.style.backgroundColor = color;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        function clearForm() {
+            document.getElementById('num-interno').value = '';
+            document.getElementById('ppu').value = '';
+            document.getElementById('estado').value = '';
+            document.getElementById('litros').value = '';
+            document.getElementById('ubicacion').value = '';
+            document.getElementById('comentario').value = '';
+        }
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: 'AIzaSyCyVG9n1lH7sfiSF2ABW6q5Q00xLVkXDgI',
+                discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+            });
+            fetchData();
+        }
+
+        async function fetchData() {
+            const sessionName = sessionStorage.getItem('sessionName');
+            const sheetName = sessionName === 'elRoble' ? 'EL ROBLE!A2:G' : sessionName === 'laReina' ? 'LA REINA!A2:G' : 'TERMINALES!A2:G';
+            
+            try {
+                const response = await gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: 'TU_SPREADSHEET_ID',
+                    range: sheetName,
+                });
+                const data = response.result.values;
+                if (data && data.length > 0) {
+                    const tableBody = document.querySelector('#levantamientos-table tbody');
+                    tableBody.innerHTML = '';
+                    data.forEach((row) => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td><input type="checkbox" class="select-row"></td>
+                            <td>${row[0]}</td>
+                            <td>${row[1]}</td>
+                            <td>${row[2]}</td>
+                            <td>${row[3]}</td>
+                            <td>${row[4]}</td>
+                            <td>${row[5]}</td>
+                        `;
+                        tableBody.appendChild(tr);
+                    });
+                } else {
+                    console.log('No data found.');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        document.getElementById('select-all').addEventListener('change', function (event) {
+            const isChecked = event.target.checked;
+            document.querySelectorAll('.select-row').forEach(checkbox => {
+                checkbox.checked = isChecked;
+                toggleRowSelection(checkbox.closest('tr'), isChecked);
+            });
+        });
+
+        document.querySelectorAll('.select-row').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                toggleRowSelection(checkbox.closest('tr'), checkbox.checked);
+            });
+        });
+
+        function toggleRowSelection(row, isSelected) {
+            if (isSelected) {
+                row.classList.add('selected-row');
+            } else {
+                row.classList.remove('selected-row');
+            }
+        }
+
+        document.getElementById('select-all-btn').addEventListener('click', function () {
+            const allChecked = document.querySelectorAll('.select-row:checked').length === document.querySelectorAll('.select-row').length;
+            document.querySelectorAll('.select-row').forEach(checkbox => {
+                checkbox.checked = !allChecked;
+                toggleRowSelection(checkbox.closest('tr'), !allChecked);
+            });
+            document.getElementById('select-all').checked = !allChecked;
+        });
+
+        document.getElementById('informar-cargados-btn').addEventListener('click', function () {
+            document.querySelectorAll('.select-row:checked').forEach(checkbox => {
+                checkbox.closest('tr').remove();
+            });
+            document.getElementById('select-all').checked = false;
+        });
+
+        // Cargar la API de Google
+        gapi.load('client:auth2', gapiLoaded);
+    </script>
+</body>
+
+</html>
