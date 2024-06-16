@@ -1,0 +1,338 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #224e9d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+header .logo {
+    font-size: 1.5rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.material-symbols-outlined {
+    margin-right: 5px;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #224e9d;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li a {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    margin: 10px;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+aside {
+    width: 200px;
+    background-color: #fff;
+    padding: 1rem;
+    height: calc(100vh - 60px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: sticky;
+    top: 10px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 1rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #224e9d;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+aside ul li a:hover {
+    background-color: rgba(34, 78, 157, 0.1);
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.section {
+    background: white;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.minisection-container {
+    display: flex;
+    flex-direction: column; /* Default to column layout */
+    gap: 10px; /* Add gap between sections */
+}
+
+.minisection {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    table-layout: fixed; /* Fix table layout to enable width control */
+}
+
+.styled-table th, .styled-table td {
+    padding: 4px; /* Reduced padding */
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+
+.styled-table td[contenteditable="true"] {
+    background-color: #f9f9f9;
+}
+
+.styled-table td[contenteditable="true"]:hover, .styled-table td[contenteditable="true"]:focus {
+    background-color: #eef;
+    outline: 2px solid #4CAF50;
+}
+
+.styled-table td::before {
+    content: "-";
+    color: #aaa;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.styled-table td[contenteditable="true"]:focus::before,
+.styled-table td[contenteditable="true"]:not(:empty)::before {
+    content: "";
+}
+
+.styled-table td:nth-child(1), .styled-table th:nth-child(1) {
+    text-align: left;
+    width: 2ch;
+}
+
+.styled-table td:nth-child(2), .styled-table th:nth-child(2) {
+    text-align: left;
+    width: 21ch;
+}
+
+.styled-table td:nth-child(3), .styled-table td:nth-child(4),
+.styled-table th:nth-child(3), .styled-table th:nth-child(4) {
+    text-align: center;
+    width: 20ch;
+}
+
+.styled-table td.numeric {
+    text-align: right; /* Right-align numeric data */
+}
+
+.btn {
+    background-color: #224e9d;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 2px solid #224e9d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #224e9d;
+}
+
+footer {
+    background-color: #224e9d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+}
+
+.alert {
+    display: none;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.alert.show {
+    display: block;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    aside {
+        display: none;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .minisection-container {
+        flex-direction: column;
+    }
+
+    .minisection {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .styled-table {
+        font-size: 0.7rem;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 3px; /* Further reduced padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .styled-table {
+        font-size: 0.6rem; /* Reduce font size further for very small screens */
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 2px; /* Further reduced padding */
+    }
+
+    .minisection {
+        padding: 10px; /* Reduce padding inside minisections */
+    }
+}

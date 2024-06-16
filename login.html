@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntraLog - Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div id="sheet-status" class="sheet-status"></div>
+        <h1>IntraLog</h1>
+        <div class="form-group">
+            <label for="username"><span class="material-symbols-outlined">account_circle</span> Usuario</label>
+            <input type="text" id="username" placeholder="Ingrese su usuario">
+        </div>
+        <div class="form-group">
+            <label for="password"><span class="material-symbols-outlined">lock</span> Contraseña</label>
+            <input type="password" id="password" placeholder="Ingrese su contraseña">
+        </div>
+        <button class="btn" onclick="handleLogin()">Iniciar Sesión</button>
+        <div class="options">
+            <a href="#" onclick="showForgotPassword()">¿Olvidó su contraseña?</a>
+            <a href="#" onclick="showCreateAccount()">Crear cuenta</a>
+        </div>
+    </div>
+    <div id="alert" class="alert"></div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgot-password-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForgotPassword()">&times;</span>
+            <h2>Recuperar Contraseña</h2>
+            <div class="form-group">
+                <label for="fp-username"><span class="material-symbols-outlined">account_circle</span> Usuario</label>
+                <input type="text" id="fp-username" placeholder="Ingrese su usuario">
+            </div>
+            <div class="form-group">
+                <label for="fp-email"><span class="material-symbols-outlined">email</span> Correo Electrónico</label>
+                <input type="email" id="fp-email" placeholder="Ingrese su correo">
+            </div>
+            <button class="btn" onclick="handleForgotPassword()">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Create Account Form -->
+    <div id="create-account-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreateAccount()">&times;</span>
+            <h2>Crear Cuenta</h2>
+            <div class="form-group">
+                <label for="ca-username"><span class="material-symbols-outlined">account_circle</span> Usuario</label>
+                <input type="text" id="ca-username" placeholder="Ingrese su usuario">
+            </div>
+            <div class="form-group">
+                <label for="ca-password"><span class="material-symbols-outlined">lock</span> Contraseña</label>
+                <input type="password" id="ca-password" placeholder="Ingrese su contraseña">
+            </div>
+            <div class="form-group">
+                <label for="ca-confirm-password"><span class="material-symbols-outlined">lock</span> Confirmar Contraseña</label>
+                <input type="password" id="ca-confirm-password" placeholder="Confirme su contraseña">
+            </div>
+            <button class="btn" onclick="handleCreateAccount()">Crear</button>
+        </div>
+    </div>
+</body>
+</html>
